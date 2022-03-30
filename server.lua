@@ -15,7 +15,7 @@ RegisterNetEvent("wert-camera:server:add-photo-item", function(url)
             photourl = string.gsub(url, '\"', '"'),
             description = 'Photo taken with Canon EOS M50'
         }
-        exports.original_inventar:AddItem(source, 'photo', 1, info)
+        exports.ox_inventory:AddItem(source, 'photo', 1, info)
     end
 end)
 
