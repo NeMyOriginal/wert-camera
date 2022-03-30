@@ -1,4 +1,4 @@
-local ESX = exports['original_framework']:getSharedObject()
+local ESX = exports['es_extended']:getSharedObject()
 local active = false
 local photoactive = false
 local cameraprop = nil
