@@ -1,5 +1,5 @@
 # wert-camera
-Camera script for ESX Legacy and ox_inventory converted from https://github.com/Wert22/wert-camera 
+Camera script for ESX Legacy and ox_inventory converted from https://github.com/Wert22/wert-camera !
 Thanks to Luke and overextended team for help!!!
 
 ### IMPORTANT ###
@@ -22,3 +22,9 @@ Insert items in your data/items.lua
 		consume = 0
 	},
 ```
+Add this to your ox_inventory/modules/items/client.lua
+
+```
+Item('photo', function(data, slot)
+    TriggerEvent('wert-camera:client:use-photo', slot.metadata.photourl)
+end)```
