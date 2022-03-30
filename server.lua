@@ -1,6 +1,6 @@
-local ESX = exports['original_framework']:getSharedObject()
+local ESX = exports['es_extended']:getSharedObject()
 
-local WebHook = "https://discord.com/api/webhooks/868230914164023346/LyCpWwI13Y_tjhQOOAESt7yCVXg66vbGDthapM2FgD6CS6g8WcY1q9QDitgIQrzvEJ03"
+local WebHook = "" -- Put your webhook
 
 ESX.RegisterUsableItem("camera", function(source, item)
     local src = source
@@ -13,7 +13,7 @@ RegisterNetEvent("wert-camera:server:add-photo-item", function(url)
     if ply then
         local info = {
             photourl = string.gsub(url, '\"', '"'),
-            description = 'Slikano fotoaparatom Canon EOS M50'
+            description = 'Photo taken with Canon EOS M50'
         }
         exports.original_inventar:AddItem(source, 'photo', 1, info)
     end
