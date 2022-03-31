@@ -14,7 +14,7 @@ RegisterNetEvent("wert-camera:server:add-photo-item", function(url, location)
     if ply then
         local info = {
             photourl = string.gsub(url, '\"', '"'),
-            description = 'Photo taken with Canon EOS M50 \n  Date and Time: ' .. time.day .. '/'  .. time.month .. '/' .. time.year .. ' - ' .. time.hour .. ':' .. time.min .. ' \n  Location: ' .. location
+            description = 'Photo taken with Canon EOS M50  \n  Date and Time: ' .. time.day .. '/'  .. time.month .. '/' .. time.year .. ' - ' .. time.hour .. ':' .. time.min .. '  \n  Location: ' .. location
         }
         exports.ox_inventory:AddItem(source, 'photo', 1, info)
     end
