@@ -7,14 +7,14 @@ ESX.RegisterUsableItem("camera", function(source, item)
     TriggerClientEvent("wert-camera:client:use-camera", src)
 end)
 
-RegisterNetEvent("wert-camera:server:add-photo-item", function(url)
+RegisterNetEvent("wert-camera:server:add-photo-item", function(url, location)
     local time = os.date('*t')
     local src = source
     local ply = ESX.GetPlayerFromId(source)
     if ply then
         local info = {
             photourl = string.gsub(url, '\"', '"'),
-            description = 'Photo taken with Canon EOS M50 \n  Date and Time: ' .. time.day .. '/'  .. time.month .. '/' .. time.year .. ' - ' .. time.hour .. ':' .. time.min
+            description = 'Photo taken with Canon EOS M50 \n  Date and Time: ' .. time.day .. '/'  .. time.month .. '/' .. time.year .. ' - ' .. time.hour .. ':' .. time.min .. ' \n  Location: ' .. location
         }
         exports.ox_inventory:AddItem(source, 'photo', 1, info)
     end
