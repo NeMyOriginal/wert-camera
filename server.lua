@@ -9,7 +9,6 @@ end)
 
 RegisterNetEvent("wert-camera:server:add-photo-item", function(url, location)
     local time = os.date('*t')
-    local src = source
     local ply = ESX.GetPlayerFromId(source)
     if ply then
         local info = {
