@@ -2,8 +2,13 @@
 Camera script for ESX Legacy and ox_inventory converted from https://github.com/Wert22/wert-camera !
 Thanks to Luke and overextended team for help!!!
 
-### IMPORTANT ###
+#### IMPORTANT
 Change WebHook in server.lua!
+###### Requirements
+
+[ESX_Legacy](https://github.com/esx-framework/esx-legacy)
+
+[ox_inventory](https://github.com/overextended/ox_inventory)
 
 Insert items in your data/items.lua
 ```	
