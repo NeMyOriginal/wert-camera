@@ -4,6 +4,7 @@ local photoactive = false
 local cameraprop = nil
 local frontCam = false
 local photoprop = nil
+local streetName
 
 local fov_max = 70.0
 local fov_min = 5.0 -- max zoom level (smaller fov is more zoom)
@@ -125,6 +126,11 @@ RegisterNetEvent("wert-camera:client:use-camera", function()
                 Wait(200)
                 local lPed = PlayerPedId()
                 local vehicle = GetVehiclePedIsIn(lPed)
+		local pCoords = GetEntityCoords(lPed)
+						
+		streetName, street2 = GetStreetNameAtCoord(pCoords.x, pCoords.y, pCoords.z)
+		streetName = GetStreetNameFromHashKey(streetName) .. ' | ' .. GetStreetNameFromHashKey(street2)
+		
                 if active then
                     active = true
                     Wait(500)
@@ -150,7 +156,7 @@ RegisterNetEvent("wert-camera:client:use-camera", function()
                                     exports['screenshot-basic']:requestScreenshotUpload(tostring(hook), "files[]", function(data)
                                     local image = json.decode(data)
                                     FullClose()
-                                    TriggerServerEvent("wert-camera:server:add-photo-item", json.encode(image.attachments[1].proxy_url))
+                                    TriggerServerEvent("wert-camera:server:add-photo-item", json.encode(image.attachments[1].proxy_url), streetName)
                                     end)						
                                   end
                                end)
