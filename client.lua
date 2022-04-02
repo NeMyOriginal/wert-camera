@@ -106,6 +106,9 @@ function HandleZoom(cam)
 end
 
 RegisterNetEvent("wert-camera:client:use-camera", function()
+    if IsPedInAnyVehicle(PlayerPedId(), false) then
+       ESX.ShowNotification('You can`t use camera in car!')
+    else
     if not active then
         active = true
 
@@ -181,6 +184,7 @@ RegisterNetEvent("wert-camera:client:use-camera", function()
         end)
     else
         FullClose()
+        end
     end
 end)
 
