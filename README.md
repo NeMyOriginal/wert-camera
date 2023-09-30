@@ -13,19 +13,19 @@ Change WebHook in server.lua!
 Insert items in your data/items.lua
 ```	
 ['camera'] = {
-		label = 'Camera',
-		weight = 900,
-		close = true,
-		stack = false,
-		consume = 0
-	},
-	['photo'] = {
-		label = 'Photo',
-		weight = 70,
-		close = true,
-		stack = false,
-		consume = 0
-	},
+label = 'Camera',
+weight = 900,
+close = true,
+stack = false,
+description = 'Used to take photos'
+},
+['photo'] = {
+label = 'Photo',
+weight = 70,
+close = true,
+stack = false,
+description = 'Photo'
+}
 ```
 Add this to your ox_inventory/modules/items/client.lua
 
